@@ -32,12 +32,21 @@ public class CityInfo {
 	}
 	
 	public CityInfo(City city, TempAndTime tempAndTime) {
-		this.id = city.getId();
+		if (city == null) { return; }
+	   this.id = city.getId();
 		this.cityName = city.getName();
-		this.countryCode = city.getCountry().getCode();
+		if (city.getCountry() == null) { 
+		   this.countryCode = null; 
+		} else {
+		   this.countryCode = city.getCountry().getCode();
+		}
 		this.district = city.getDistrict();
 		this.population = city.getPopulation();
-		this.countryName = city.getCountry().getName();
+		if (city.getCountry() == null) { 
+		   this.countryCode = null; 
+		} else {
+		   this.countryName = city.getCountry().getName();
+		}
 		this.tempAndTime = tempAndTime;
 	}
 
