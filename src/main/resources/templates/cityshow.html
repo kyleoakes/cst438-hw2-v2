@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>City</title>
+</head>
+<body>
+	<h3>City</h3>
+	<table>
+		<tr>
+			<td>ID</td>
+			<td th:numbers>[[${cityInfo.getId()}]]</td>
+		</tr>
+		<tr>
+			<td>Name</td>
+			<td th:type="text">[[${cityInfo.getCityName()}]]</td>
+		</tr>
+		<tr>
+			<td>CountryCode</td>
+			<td th:type="text">[[${cityInfo.getCountryCode()}]]</td>
+		</tr>
+		<tr>
+			<td>Country Name</td>
+			<td th:type="text">[[${cityInfo.getCountryName()}]]</td>
+		</tr>
+		<tr>
+			<td>District</td>
+			<td th:type="text">[[${cityInfo.getDistrict()}]]</td>
+		</tr>
+		<tr>
+			<td>Population</td>
+			<td th:numbers>[[${cityInfo.getPopulation()}]]</td>
+		</tr>
+		<tr>
+			<td>Local Weather</td>
+			<td th:type="text">[[${cityInfo.getTempAndTime().getReadableTemp()}]]</td>
+		</tr>
+		<tr>
+			<td>Local Time</td>
+			<td th:type="text">[[${cityInfo.getTempAndTime().getReadableTime()}]]</td>
+		</tr>
+	</table>
+</body>
+</html>
